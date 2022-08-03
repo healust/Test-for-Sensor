@@ -1,0 +1,2 @@
+id,tof_name,Manufacturer,FOV_Degrees,FOV_V,Width,Height,Working_Range_min,Working_Range_max,Frame_Rate,Accuracy
+5,ToFcb-635-S-UWF,epc,125,15,160,60,0.02,3,20,20

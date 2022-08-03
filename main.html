@@ -1,0 +1,117 @@
+<HTML>
+<HEAD>
+<META http-equiv="content-type" content="text/html; charset=utf-8">
+<META http-equiv="imagetoolbar" content="no">
+<META http-equiv="X-UA-Compatible" content="IE=edge">
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+</HEAD>
+<BODY>
+
+<!-- 하이퍼링크 색상 및 표기법 변경 -->
+<style type="text/css">
+ a:link { color: black; text-decoration: none;}
+ a:visited { color: black; text-decoration: none;}
+ a:hover { color: black; text-decoration: none;}
+</style>
+
+
+<h1> Sensor DB </h1>
+
+
+<h2>
+<!-- ajax를 이용해 페이지 이동 없이 특정 위치에 다른 페이지를 불러오기 -->
+
+<label><input type="radio" id="extract" name="mainmenu" value='1' onclick='btnclick()'style="display:none">Extract<br><br></label>
+<label><input type="radio" id="insert" name="mainmenu" value='2' onclick='btnclick()'style="display:none">Insert<br><br></label>
+<label><input type="radio" id="delete" name="mainmenu" value='3' onclick='btnclick()'style="display:none">Delete<br><br></label>
+<label><input type="radio" id="showtb" name="mainmenu" value='4' onclick='btnclick()'style="display:none">Show Table<br><br></label>
+
+<!--
+<a href="javascript:void(0);" onclick="btnclick('extract.php')">EXTRACT</a><br>
+<a href="javascript:void(0);" onclick="btnclick('insert working check.php')">INSERT</a><br>
+<a href="javascript:void(0);" onclick="btnclick('show table working check.php')">Show Table</a><br><br>
+-->
+
+<h2>
+
+<div id="include_page"></div>
+
+<!-- ajax 스크립트 -->
+<script type="text/javascript">
+    function btnclick(){
+		if($("input:radio[id='extract']").is(":checked")==true ){
+			$.ajax({
+				url : "extract_main.php",
+				type : "post",
+				success: function(data) {
+					$('#include_page').html(data);
+				},
+					error: function() {
+					$('#include_page').text('페이지 점검중 입니다.');
+				}
+			});
+
+		}
+		
+		else if($("input:radio[id='insert']").is(":checked")==true ){
+			$.ajax({
+				url : "insert_main.php",
+				type : "post",
+				success: function(data) {
+					$('#include_page').html(data);
+				},
+					error: function() {
+					$('#include_page').text('페이지 점검중 입니다.');
+				}
+			});
+
+		}
+		
+		else if($("input:radio[id='delete']").is(":checked")==true ){
+			$.ajax({
+				url : "delete_main.php",
+				type : "post",
+				success: function(data) {
+					$('#include_page').html(data);
+				},
+					error: function() {
+					$('#include_page').text('페이지 점검중 입니다.');
+				}
+			});
+
+		}
+		
+		else if($("input:radio[id='showtb']").is(":checked")==true ){
+			$.ajax({
+				url : "show table.php",
+				type : "post",
+				success: function(data) {
+					$('#include_page').html(data);
+				},
+					error: function() {
+					$('#include_page').text('페이지 점검중 입니다.');
+				}
+			});
+
+		}
+		else {
+		
+		}
+    }
+	// 페이지 비워주기
+	$(include_page).empty();
+</script>
+
+
+
+<!--
+<FORM METHOD="get"  ACTION="delete.php">
+	(4) 회원 삭제 - 회원 아이디 : <INPUT TYPE ="text" NAME="userID"> 
+	<INPUT TYPE="submit"  VALUE="삭제">
+</FORM>
+-->
+
+
+
+</BODY>
+</HTML>

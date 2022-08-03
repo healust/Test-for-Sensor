@@ -1,0 +1,2 @@
+id,Lidar_Name,Manufacturer,VerticalFOVLower,VerticalFOVUpper,HorizontalFOVStart,HorizontalFOVEnd,RotationsPerSecond,PointsPerSecond,Range_Min,Range_Max,Range_Accuracy,Range_Accuracy,Range_Precision,Angular_Accuracy,AngularResolution_H,AngularResolution_V
+106,Leica BLK360,Hexagon,0,300,0,360,-1,360000,0.6,60,4,-1,-1,-1,-1
